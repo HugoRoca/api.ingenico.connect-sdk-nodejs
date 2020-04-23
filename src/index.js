@@ -1,4 +1,5 @@
 const Koa = require('koa')
+const cors = require('@koa/cors')
 const bodyParser = require('koa-bodyparser')
 const json = require('koa-json')
 const logger = require('koa-logger')
@@ -9,7 +10,7 @@ const docs = require('./utils/api.docs')
 const env = yenv()
 const server = new Koa()
 
-server.use(bodyParser()).use(json()).use(logger()).use(docs)
+server.use(cors()).use(bodyParser()).use(json()).use(logger()).use(docs)
 
 routes.map((r) => {
   server.use(r.routes()).use(r.allowedMethods())
