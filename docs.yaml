@@ -1,0 +1,4 @@
+swagger: '1.0'
+info:
+  title: API Ingenico
+  version: '1.0'
